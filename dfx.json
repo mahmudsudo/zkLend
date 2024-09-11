@@ -1,0 +1,17 @@
+{
+  "canisters": {
+    "zkLend_backend": {
+      "candid": "src/zkLend_backend/zkLend_backend.did",
+      "package": "zkLend_backend",
+      "type": "rust"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
