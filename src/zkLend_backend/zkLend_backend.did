@@ -1,3 +1,22 @@
+type User = record {
+    balance: nat64;
+    staked_amount: nat64;
+    borrowed_amount: nat64;
+};
+
+type Result = variant {
+    Ok;
+    Err: text;
+};
+
 service : {
-    "greet": (text) -> (text) query;
+    deposit: (amount: nat64) -> (Result);
+    withdraw: (amount: nat64) -> (Result);
+    stake: (amount: nat64) -> (Result);
+    unstake: (amount: nat64) -> (Result);
+    borrow: (amount: nat64) -> (Result);
+    repay: (amount: nat64) -> (Result);
+    get_user_info: (user: principal) -> (User) query;
+    get_canister_info: () -> (nat64, nat64) query;
+    greet: (name: text) -> (text) query;
 }
